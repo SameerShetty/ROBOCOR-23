@@ -14,12 +14,12 @@ function Home() {
     <>
       <NavBar />
       <div className="hero"></div>
+
       <div className="container-fluid" style={{ minHeight: "100vh" }}>
         <div
           className="row align-items-center justify-content-center header"
           style={{ minHeight: "100vh" }}
         >
-          {" "}
           <h1
             className="text-center tracking-in-contract-bck "
             style={{ margin: "3rem .5rem" }}

@@ -100,12 +100,12 @@ h1 {
 
 .hero {
   background-image: url("../public/imgs/bg.jpg");
-  background-position: center;
-  background-size: cover;
   width: 100%;
   min-height: 100vh;
+  background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  background-size: cover;
   position: absolute;
   top: 0;
   left: 0;
