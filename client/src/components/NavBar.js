@@ -14,35 +14,55 @@ function NavBar() {
   return (
     <>
       {!isNav ? (
-        <HiOutlineMenuAlt4
-          onClick={() => {
-            setNav(!isNav);
-          }}
-          className="position-fixed rotate-in-center "
+        <div
+          className="position-fixed d-flex align-items-center justify-content-center"
           style={{
+            backgroundColor: "#fa4454",
+            aspectRatio: "1",
+            width: "2.5rem",
+            borderRadius: "50%",
             top: "15px",
             right: "10px",
-            color: "#f0f5f9",
-            fontSize: "2rem",
             zIndex: "1000",
             cursor: "pointer",
           }}
-        />
+        >
+          <HiOutlineMenuAlt4
+            onClick={() => {
+              setNav(!isNav);
+            }}
+            className="rotate-in-center "
+            style={{
+              color: "#f0f5f9",
+              fontSize: "2rem",
+            }}
+          />
+        </div>
       ) : (
-        <HiOutlineChevronLeft
-          onClick={() => {
-            setNav(!isNav);
-          }}
-          className="position-fixed rotate-in-center"
+        <div
+          className="position-fixed d-flex align-items-center justify-content-center"
           style={{
+            backgroundColor: "#fa4454",
+            aspectRatio: "1",
+            width: "2.5rem",
+            borderRadius: "50%",
             top: "15px",
             right: "10px",
-            color: "#1e2022",
-            fontSize: "2rem",
             zIndex: "1000",
             cursor: "pointer",
           }}
-        />
+        >
+          <HiOutlineChevronLeft
+            onClick={() => {
+              setNav(!isNav);
+            }}
+            className="rotate-in-center "
+            style={{
+              color: "#f0f5f9",
+              fontSize: "2rem",
+            }}
+          />
+        </div>
       )}
 
       <nav
@@ -62,40 +82,45 @@ function NavBar() {
           >
             <ul className="p-2 my-3 mx-1">
               <li className="my-5">
-                <SiReacthookform
-                  style={{
-                    fontSize: "1.5rem",
-                    color: "#000",
-                    marginRight: ".3rem",
-                  }}
-                />
-
                 <Link to={"/register"} style={{ color: "#1e2022" }}>
-                  Register
+                  <h6 style={{ color: "#0f1924" }}>
+                    <SiReacthookform
+                      style={{
+                        fontSize: "1.5rem",
+                        color: "#fa4454",
+                        marginRight: ".3rem",
+                      }}
+                    />
+                    Register
+                  </h6>
                 </Link>
               </li>
               <li className="my-5">
-                <GiTrophyCup
-                  style={{
-                    fontSize: "1.5rem",
-                    color: "#000",
-                    marginRight: ".3rem",
-                  }}
-                />
                 <Link to={"/results"} style={{ color: "#1e2022" }}>
-                  Results
+                  <h6 style={{ color: "#0f1924" }}>
+                    <GiTrophyCup
+                      style={{
+                        fontSize: "1.5rem",
+                        color: "#fa4454",
+                        marginRight: ".3rem",
+                      }}
+                    />
+                    Results
+                  </h6>
                 </Link>
-              </li>{" "}
+              </li>
               <li className="my-5">
-                <HiDownload
-                  style={{
-                    fontSize: "1.5rem",
-                    color: "#000",
-                    marginRight: ".3rem",
-                  }}
-                />
                 <Link to={"/register"} style={{ color: "#1e2022" }}>
-                  Rule Book
+                  <h6 style={{ color: "#0f1924" }}>
+                    <HiDownload
+                      style={{
+                        fontSize: "1.5rem",
+                        color: "#fa4454",
+                        marginRight: ".3rem",
+                      }}
+                    />
+                    Rule Book
+                  </h6>
                 </Link>
               </li>
             </ul>

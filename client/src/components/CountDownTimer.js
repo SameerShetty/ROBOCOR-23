@@ -28,7 +28,7 @@ function CountDownTimer({ targetDate }) {
   }, [timeLeft]);
 
   return (
-    <div className="text-center " style={{ color: "#f0f5f9" }}>
+    <div className="text-center ct" style={{ color: "#f0f5f9" }}>
       {timeLeft.days} days : {timeLeft.hours} hours : {timeLeft.minutes} minutes
       : {timeLeft.seconds} seconds to go
     </div>

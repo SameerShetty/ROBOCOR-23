@@ -22,11 +22,21 @@ function Home() {
         >
           <h1
             className="text-center tracking-in-contract-bck "
-            style={{ margin: "3rem .5rem" }}
+            style={{
+              margin: "3rem .5rem .5rem",
+              textShadow: "3px 3px 20px #fa4454,-2px 1px 30px #fa4454",
+            }}
           >
             {" "}
             ROBOCOR
           </h1>
+          <h6
+            className="text-center"
+            style={{ textShadow: "3px 3px 20px #fa4454,-2px 1px 30px #fa4454" }}
+          >
+            Innovate . Compete . Conquer
+          </h6>
+
           <h5>
             {" "}
             <CountDownTimer targetDate={targetDate} />

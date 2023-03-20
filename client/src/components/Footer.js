@@ -51,7 +51,7 @@ function Footer() {
             >
               <FaLinkedinIn
                 style={{
-                  color: "#fff",
+                  color: "#fa4454",
                 }}
               />
             </a>
@@ -62,7 +62,7 @@ function Footer() {
             >
               <FaInstagram
                 style={{
-                  color: "#fff",
+                  color: " #fa4454",
                 }}
               />
             </a>
@@ -73,7 +73,7 @@ function Footer() {
             >
               <FaYoutube
                 style={{
-                  color: "#fff",
+                  color: "#fa4454",
                 }}
               />
             </a>{" "}
@@ -106,7 +106,7 @@ function Footer() {
             <p style={{ color: "#c9d6df" }}>
               <FaWhatsapp
                 style={{
-                  color: "#f0f5f9",
+                  color: "#fa4454",
                   fontSize: "1.5rem",
                   verticalAlign: "top",
                 }}
@@ -119,7 +119,7 @@ function Footer() {
             <p style={{ color: "#c9d6df" }}>
               <SiGmail
                 style={{
-                  color: "#f0f5f9",
+                  color: "#fa4454",
                   fontSize: "1.5rem",
                   verticalAlign: "top",
                 }}
