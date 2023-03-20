@@ -18,11 +18,11 @@ app.use(morgan("dev"));
 app.use("/api/register", require("./routes/RegisterRoute"));
 app.use("/api/results", require("./routes/ResultsRoute"));
 
-// app.use(express.static(path.join(__dirname, "../client/build")));
+app.use(express.static(path.join(__dirname, "../client/build")));
 
-// app.get("*", function (req, res) {
-//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
-// });
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
 connectDb()
   .then(() => {
