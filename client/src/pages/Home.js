@@ -54,6 +54,9 @@ function Home() {
               title={item.title}
               desc={item.desc}
               img={item.img}
+              ev={item.ev}
+              et={item.et}
+              ts={item.ts}
             />
           ))}
         </div>
@@ -63,11 +66,17 @@ function Home() {
             <div>
               {" "}
               <Link to="/register">
-                <button
+                {/* <button
                   className="btn btn-light btn-lg"
                   style={{ backgroundColor: "#fff", color: "#000" }}
                 >
-                  Register{" "}
+                 {" "}
+                </button> */}
+                <button className="btn btn--light">
+                  <span className="btn__inner">
+                    <span className="btn__slide"></span>
+                    <span className="btn__content"> Register</span>
+                  </span>
                 </button>
               </Link>
             </div>

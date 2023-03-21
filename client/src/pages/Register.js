@@ -256,8 +256,14 @@ function Register() {
                       </div>
                     </div>
                   </div>
-                  <button type="button" className="btn btn-light my-3">
+                  {/* <button type="button" className="btn btn-light my-3">
                     Total : {total} ₹
+                  </button> */}
+                  <button className="btn my-3" type="button">
+                    <span className="btn__inner">
+                      <span className="btn__slide"></span>
+                      <span className="btn__content"> Total : {total} ₹</span>
+                    </span>
                   </button>
                 </div>
                 <div className="col-12 col-md-6 ">
@@ -388,8 +394,14 @@ function Register() {
                     {" "}
                     <div className="col-12 d-flex flex-row align-items-center justify-content-end">
                       {" "}
-                      <button type="submit" className="btn btn-dark ">
+                      {/* <button type="submit" className="btn btn-dark ">
                         continue
+                      </button> */}
+                      <button className="btn" type="submit">
+                        <span className="btn__inner">
+                          <span className="btn__slide"></span>
+                          <span className="btn__content"> continue</span>
+                        </span>
                       </button>
                     </div>
                   </div>
@@ -528,15 +540,31 @@ function Register() {
                     {" "}
                     <div className="col-12 d-flex flex-row align-items-center justify-content-between">
                       {" "}
-                      <button
+                      {/* <button
                         type="button"
                         className="btn btn-dark"
                         onClick={handlePrevious}
                       >
                         previous
+                      </button> */}
+                      <button
+                        className="btn "
+                        type="button"
+                        onClick={handlePrevious}
+                      >
+                        <span className="btn__inner">
+                          <span className="btn__slide"></span>
+                          <span className="btn__content"> previous</span>
+                        </span>
                       </button>
-                      <button type="submit" className="btn btn-dark ">
+                      {/* <button type="submit" className="btn btn-dark ">
                         continue
+                      </button> */}
+                      <button className="btn " type="submit">
+                        <span className="btn__inner">
+                          <span className="btn__slide"></span>
+                          <span className="btn__content"> continue</span>
+                        </span>
                       </button>
                     </div>
                   </div>

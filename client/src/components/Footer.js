@@ -180,8 +180,17 @@ function Footer() {
                 EMAIL
               </label>
             </div>
-            <button type="submit" className="btn btn-dark">
+            {/* <button type="submit" className="btn btn-dark">
               {loading ? <Loader color="#c9d6df" /> : "Subscribe"}
+            </button> */}
+            <button type="submit" className="btn btn--light">
+              <span className="btn__inner">
+                <span className="btn__slide"></span>
+                <span className="btn__content">
+                  {" "}
+                  {loading ? <Loader color="#0f1924" /> : "Subscribe"}
+                </span>
+              </span>
             </button>
           </form>
         </div>
