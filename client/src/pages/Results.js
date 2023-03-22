@@ -5,6 +5,7 @@ import Table from "../components/Table";
 function Results() {
   const [results, setResults] = useState();
   useEffect(() => {
+    window.scrollTo(0, 0);
     axios
       .get("/api/results")
       .then((response) => {

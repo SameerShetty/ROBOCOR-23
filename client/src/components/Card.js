@@ -7,8 +7,15 @@ function Card(props) {
     <div className="col-md-5 col-11">
       <Fade triggerOnce={true} delay={0.1} direction="up">
         <div
-          className="card shadow-lg mb-5 bg-white rounded"
-          style={{ margin: "1rem .5rem" }}
+          className="card mb-5"
+          style={{
+            margin: "1rem .5rem",
+            backgroundColor: "#ecedec",
+            border: "none",
+            outline: "transparent",
+            boxShadow:
+              "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
+          }}
         >
           <Link to={`/event/${props.eventId}`}>
             <LazyLoadImage

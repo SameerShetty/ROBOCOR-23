@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 function Register() {
@@ -21,6 +21,9 @@ function Register() {
     m3email: "",
     eventList: [],
   });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => {
@@ -93,6 +96,9 @@ function Register() {
                 width: "100%",
                 padding: "1.5rem 2rem",
                 borderRadius: "12px",
+                marginBottom: "1.5rem",
+                boxShadow:
+                  "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
               }}
             >
               <div className="row align-items-center justify-content-center fade-in-right fade-out-left">
@@ -416,6 +422,9 @@ function Register() {
                 width: "100%",
                 padding: "1.5rem 2rem",
                 borderRadius: "12px",
+                marginBottom: "1.5rem",
+                boxShadow:
+                  "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
               }}
             >
               <div className="row align-items-center justify-content-center fade-in-right">

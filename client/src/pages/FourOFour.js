@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function FourOFour() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="container-fluid" style={{ minHeight: "100vh" }}>
       <div

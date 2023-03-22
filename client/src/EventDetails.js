@@ -3,7 +3,7 @@ const EventDetails = [
     id: 1,
     img: "../imgs/dino.png",
     title: "Decode",
-    desc: "Coding is an integral part of Robotics. This event encourages students from all branches to participate and improve their coding and critical thinking skill. ",
+    desc: "Coding is an integral part of Robotics. This event encourages students from all branches to participate and improve their coding and critical thinking skill. It will be an all India competition you will be able to find out your place in the crowd of elite coders sitting just beside you in the competition . self evaluation plays a very major role in improving yourself.",
     ev: "Lab",
     et: "10.30 am",
     ts: "2",
@@ -12,9 +12,7 @@ const EventDetails = [
     id: 2,
     img: "../imgs/dino.png",
     title: "Arduino Clash",
-    desc: "Coding is an integral part of Robotics. This event encourages students from all branches to participate and improve their coding and critical thinking skill. ",
-
-    // desc: "Come, let out the inventive genius in you. In this event, participants will have to go through a written test. The selected teams have to complete a task based on Arduino. The team conceding minimum time will be the winner. ",
+    desc: "Come, let out the inventive genius in you. In this event, participants will have to go through a written test. The selected teams have to complete a task based on Arduino. The team conceding minimum time will be the winner. Competitions such as arduino clash helps you to develop your on spot problem solving skills. is an integral part of Robotics. This event encourages students from all branches to participate and improve their coding and critical thinking skill. ",
     ev: "Media Center",
     et: "10.30 am",
     ts: "3",
@@ -23,9 +21,7 @@ const EventDetails = [
     id: 3,
     img: "../imgs/dino.png",
     title: "Rugged Race",
-    desc: "Coding is an integral part of Robotics. This event encourages students from all branches to participate and improve their coding and critical thinking skill. ",
-
-    // desc: "Each participant has to design and build a manually controlled wired/wireless bot that is capable of traversing a given terrain with ease and in less time. The arena is designed to test the mobility and speed of the bot in various terrains. ",
+    desc: "The objective is to design a manual robot which can compete on an arena specially designed for robotic soccer match. It will be a one vs one soccer match in which the aim will be to push the ball in the opponent's goal post. The most dexterous and quirky design prevail. Just experience the sumo clash of amazing bots in the field.  is an integral part of Robotics. This event encourages students from all branches to participate and improve their coding and critical thinking skill. ",
     ev: "Outdoor Stadium",
     et: "10.30 am",
     ts: "4",
@@ -36,7 +32,6 @@ const EventDetails = [
     title: "Robo Soccer",
     desc: "Coding is an integral part of Robotics. This event encourages students from all branches to participate and improve their coding and critical thinking skill. ",
 
-    // desc: "The objective is to design a manual robot which can compete on an arena specially designed for robotic soccer match. It will be a one vs one soccer match in which the aim will be to push the ball in the opponent's goal post. The most dexterous and quirky design prevail. ",
     ev: "Canteen",
     et: "10.30 am",
     ts: "4",
@@ -67,9 +62,6 @@ const EventDetails = [
     id: 7,
     img: "../imgs/dino.png",
     title: "Paper Presentation",
-    desc: "Coding is an integral part of Robotics. This event encourages students from all branches to participate and improve their coding and critical thinking skill. ",
-
-    // desc: "It’s time to show who’s the boss when it comes to the command over the subject. The staple diet of all technical events is undoubtedly the presentation event, yet it has something in it which makes it exciting. If you have an idea which has been taking shelter in your mind that would change lifestyles visibly, make inroads into the development of geeky technology or even make some known technology effective and efficient then we offer you the stage to show who you are to the world. ",
     ev: "Seminar Hall",
     et: "10.30 am",
     ts: "4",

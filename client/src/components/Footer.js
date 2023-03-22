@@ -102,8 +102,9 @@ function Footer() {
           <p style={{ color: "#c9d6df" }}>
             Siddaganga Institute of Technology Tumkur, Karnataka
           </p>
-          <a href="https://api.whatsapp.com/send?phone=919986094165">
-            <p style={{ color: "#c9d6df" }}>
+
+          <p style={{ color: "#c9d6df" }}>
+            <a href="https://api.whatsapp.com/send?phone=919986094165">
               <FaWhatsapp
                 style={{
                   color: "#fa4454",
@@ -111,23 +112,28 @@ function Footer() {
                   verticalAlign: "top",
                 }}
               />
-              {"  "}
+            </a>
+            {"  "}{" "}
+            <a href="https://api.whatsapp.com/send?phone=919986094165">
               Contact us on WhatsApp
-            </p>
-          </a>
-          <a href="mailto:cosit@sit.ac.in" target={"_blank"} rel="noreferrer">
-            <p style={{ color: "#c9d6df" }}>
+            </a>
+          </p>
+
+          <p style={{ color: "#c9d6df" }}>
+            <a href="mailto:cosit@sit.ac.in" target={"_blank"} rel="noreferrer">
               <SiGmail
                 style={{
                   color: "#fa4454",
                   fontSize: "1.5rem",
                   verticalAlign: "top",
                 }}
-              />
-              {"  "}
-              Contact us on Gmail
-            </p>
-          </a>
+              />{" "}
+            </a>
+            {"  "}{" "}
+            <a href="mailto:cosit@sit.ac.in" target={"_blank"} rel="noreferrer">
+              Contact us on Gmail{" "}
+            </a>
+          </p>
         </div>
         <div className="col-md-3 col-12 d-flex justify-content-center flex-column p-3">
           <h6>SUBSCRIBE</h6>

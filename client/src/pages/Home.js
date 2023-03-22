@@ -9,6 +9,11 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
 function Home() {
+  // window.onscroll = () => {
+  //   document.getElementById("gun").style.transform =
+  //     "scaleX(-1) rotate(" + window.pageYOffset / 0.8 + "deg)";
+  // };
+
   const targetDate = new Date("2023-05-17T00:00:00");
   return (
     <>
@@ -42,7 +47,14 @@ function Home() {
             <CountDownTimer targetDate={targetDate} />
           </h5>
         </div>
-        <div className="row align-items-center my-3 justify-content-center ">
+        <div className="row align-items-center my-3 justify-content-center position-relative">
+          {/* <LazyLoadImage
+            alt={"gun-img"}
+            effect="blur"
+            id="gun"
+            src={"../imgs/gun.png"}
+            className="img gun"
+          /> */}
           <h1 className="text-center " style={{ margin: "3rem .5rem" }}>
             {" "}
             Events
@@ -73,7 +85,7 @@ function Home() {
                  {" "}
                 </button> */}
                 <button className="btn btn--light">
-                  <span className="btn__inner">
+                  <span className="btn__inner" style={{ padding: "16px 32px" }}>
                     <span className="btn__slide"></span>
                     <span className="btn__content"> Register</span>
                   </span>

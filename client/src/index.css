@@ -148,6 +148,7 @@ input[type="tel"]:valid,
   /* color: var(--prim-white); */
   font-size: 6rem;
 }
+
 .progress-bar-striped {
   background-image: linear-gradient(
     45deg,
@@ -164,8 +165,16 @@ input[type="tel"]:valid,
 .form-check-label {
   cursor: pointer;
 }
-.card {
-  background-color: var(--white);
+
+.gun {
+  position: absolute;
+  width: 300px;
+  top: 5rem;
+  left: 30%;
+  transform: translateX(-30%);
+  transform-origin: top;
+  -webkit-transform: scaleX(-1);
+  transform: rotate(-90deg) scaleX(-1);
 }
 .card-title {
   font-family: "Valorant";

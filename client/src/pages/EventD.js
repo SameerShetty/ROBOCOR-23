@@ -8,6 +8,7 @@ function EventD() {
   const navigate = useNavigate();
   const { id } = useParams();
   useEffect(() => {
+    window.scrollTo(0, 0);
     const findEventDetails = EventDetails.find(
       (item) => Number(item.id) === Number(id)
     );
