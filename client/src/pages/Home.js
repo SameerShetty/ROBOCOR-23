@@ -7,13 +7,9 @@ import SponsorDetails from "../SponsorDetails";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import ScrollSpinner from "../components/ScrollSpinner";
 
 function Home() {
-  // window.onscroll = () => {
-  //   document.getElementById("gun").style.transform =
-  //     "scaleX(-1) rotate(" + window.pageYOffset / 0.8 + "deg)";
-  // };
-
   const targetDate = new Date("2023-05-17T00:00:00");
   return (
     <>
@@ -55,10 +51,8 @@ function Home() {
             src={"../imgs/gun.png"}
             className="img gun"
           /> */}
-          <h1 className="text-center " style={{ margin: "3rem .5rem" }}>
-            {" "}
-            Events
-          </h1>
+          <ScrollSpinner />
+
           {EventDetails.map((item) => (
             <Card
               key={item.id}
