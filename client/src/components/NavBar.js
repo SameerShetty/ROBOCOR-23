@@ -5,8 +5,9 @@ import {
   HiOutlineChevronLeft,
   HiDownload,
 } from "react-icons/hi";
-import { SiReacthookform } from "react-icons/si";
+import { SiReacthookform, SiValorant } from "react-icons/si";
 import { GiTrophyCup } from "react-icons/gi";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function NavBar() {
   const [isNav, setNav] = useState(false);
@@ -70,7 +71,7 @@ function NavBar() {
       )}
 
       <nav
-        className="position-fixed  top-0 shadow-lg p-3 mb-5 bg-white "
+        className="position-fixed top-0 p-3"
         style={{
           width: "100%",
           minHeight: "100vh",
@@ -81,10 +82,31 @@ function NavBar() {
       >
         <div className="container-fluid">
           <div
-            className="d-flex align-items-start justify-content-center"
+            className="d-flex align-items-start justify-content-center "
             style={{ minHeight: "100vh" }}
           >
-            <ul className="p-2 my-3 mx-1">
+            <LazyLoadImage
+              alt={"jett-img"}
+              effect="blur"
+              src={"../imgs/Jett.png"}
+              className="img"
+              style={{ height: "100vh", opacity: ".243" }}
+            />
+            <ul className="p-2 my-3 mx-1 position-absolute">
+              <li className="my-5">
+                <Link to={"/"} style={{ color: "#1e2022" }}>
+                  <h6 style={{ color: "#0f1924" }}>
+                    <SiValorant
+                      style={{
+                        fontSize: "1.5rem",
+                        color: "#fa4454",
+                        marginRight: ".3rem",
+                      }}
+                    />
+                    Home
+                  </h6>
+                </Link>
+              </li>
               <li className="my-5">
                 <Link to={"/register"} style={{ color: "#1e2022" }}>
                   <h6 style={{ color: "#0f1924" }}>

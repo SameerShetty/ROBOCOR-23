@@ -166,7 +166,7 @@ input[type="tel"]:valid,
   cursor: pointer;
 }
 
-.gun {
+/* .gun {
   position: absolute;
   width: 300px;
   top: 5rem;
@@ -175,7 +175,7 @@ input[type="tel"]:valid,
   transform-origin: top;
   -webkit-transform: scaleX(-1);
   transform: rotate(-90deg) scaleX(-1);
-}
+} */
 .card-title {
   font-family: "Valorant";
 }
@@ -189,6 +189,11 @@ nav {
   background-color: var(--dull-white);
   color: var(--black);
 }
+nav a.active,
+nav a:active {
+  color: var(--red);
+}
+
 h6 {
   color: var(--red);
   font-size: 1.5rem;
