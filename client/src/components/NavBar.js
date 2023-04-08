@@ -149,6 +149,20 @@ function NavBar() {
                   </h6>
                 </Link>
               </li>
+              <li className="my-5">
+                <Link to={"/certificate"} style={{ color: "#1e2022" }}>
+                  <h6 style={{ color: "#0f1924" }}>
+                    <HiDownload
+                      style={{
+                        fontSize: "1.5rem",
+                        color: "#fa4454",
+                        marginRight: ".3rem",
+                      }}
+                    />
+                    Certificate
+                  </h6>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

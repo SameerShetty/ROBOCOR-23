@@ -192,6 +192,7 @@ nav {
 nav a.active,
 nav a:active {
   color: var(--red);
+  text-overflow: ellipsis;
 }
 
 h6 {

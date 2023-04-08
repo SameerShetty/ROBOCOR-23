@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 
 const teamSchema = mongoose.Schema({
+  token: {
+    type: String,
+    unique: true,
+    required: true,
+  },
   TLead: {
     type: String,
     require: [1, "Team leader required !!!"],
@@ -46,6 +51,18 @@ const teamSchema = mongoose.Schema({
   eventList: {
     type: [String],
     default: [],
+  },
+  razorpay_order_id: {
+    type: String,
+    required: true,
+  },
+  razorpay_payment_id: {
+    type: String,
+    required: true,
+  },
+  razorpay_signature: {
+    type: String,
+    required: true,
   },
 });
 

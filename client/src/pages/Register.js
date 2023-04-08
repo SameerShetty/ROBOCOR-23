@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import axios from "axios";
 
 function Register() {
   const [progressWidth, setProgressWidth] = useState(0);
   const [formStep, setFormStep] = useState(1);
+  // const [msg, setMsg] = useState({});
   const [total, setTotal] = useState(0);
   const [events, setEvents] = useState([]);
   const [formData, setFormData] = useState({
@@ -35,12 +37,77 @@ function Register() {
       };
     });
   };
+  const checkoutHandler = async (newTeam) => {
+    const {
+      data: { key },
+    } = await axios.get("/api/register/key");
+
+    const {
+      data: { order },
+    } = await axios.post("/api/register/checkout", newTeam);
+
+    const options = {
+      key,
+      amount: order.amount,
+      currency: "INR",
+      name: "CORSIT-ROBOCOR-23",
+      description: "CORSIT-ROBOCOR-23",
+      image: "../imgs/dinopng.png",
+      order_id: order.id,
+      handler: async (response) => {
+        const newOb = {
+          responseData: response,
+          team: newTeam,
+        };
+        try {
+          const verifyUrl = "/api/register";
+          const { data } = await axios.post(verifyUrl, newOb);
+          toast.success(data.message + data.token);
+        } catch (error) {
+          console.log(error);
+        }
+      },
+      prefill: {
+        name: "CORSIT",
+        email: "corsit@sit.ac.in",
+        contact: "9986094165",
+      },
+      notes: {
+        address: "CORSIT LAB,SIT,TUMKUR",
+      },
+      theme: {
+        color: "#fa4454",
+      },
+    };
+    const razor = new window.Razorpay(options);
+    razor.open();
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (events.length === 0) toast.error("Please select atleast one event !!!");
     else {
       setProgressWidth((prev) => Number(prev) + 33.33);
       setFormStep((prev) => Number(prev) + 1);
+      if (Number(formStep) === 2) {
+        const newTeam = {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          clg: formData.clg,
+          branch: formData.branch,
+          usn: formData.usn,
+          m1: formData.m1,
+          m1email: formData.m1email,
+          m2: formData.m2,
+          m2email: formData.m2email,
+          m3: formData.m3,
+          m3email: formData.m3email,
+          eventList: events,
+          amount: total,
+        };
+        checkoutHandler(newTeam);
+      }
     }
   };
   const handlePrevious = (e) => {
@@ -84,15 +151,17 @@ function Register() {
           </h1>
 
           <div className="col-11 d-flex align-items-center justify-content-around flex-column">
-            <div className="progress my-4 mx-auto" style={{ width: "90%" }}>
-              <div
-                className="progress-bar progress-bar-striped progress-bar-animated "
-                role="progressbar"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style={{ width: `${progressWidth}%` }}
-              ></div>
-            </div>
+            {!formStep === 3 && (
+              <div className="progress my-4 mx-auto" style={{ width: "90%" }}>
+                <div
+                  className="progress-bar progress-bar-striped progress-bar-animated "
+                  role="progressbar"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style={{ width: `${progressWidth}%` }}
+                ></div>
+              </div>
+            )}
             {formStep === 1 && (
               <form
                 onSubmit={handleSubmit}
@@ -586,9 +655,6 @@ function Register() {
                   </div>
                 </div>
               </form>
-            )}
-            {formStep === 3 && (
-              <h2 style={{ color: "#fff" }}>Payment Gateway</h2>
             )}
           </div>
         </div>

@@ -51,7 +51,7 @@ function Home() {
             src={"../imgs/gun.png"}
             className="img gun"
           /> */}
-          <ScrollSpinner />
+          {/* <ScrollSpinner /> */}
 
           {EventDetails.map((item) => (
             <Card
