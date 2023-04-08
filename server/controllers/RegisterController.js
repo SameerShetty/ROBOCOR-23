@@ -94,10 +94,13 @@ const register = async (req, res) => {
       razorpay_signature,
     });
     const newTeam = await team.save();
+    const randNum = Math.floor(Math.random() * 5) + 1;
     if (newTeam)
-      return res
-        .status(200)
-        .json({ message: "Registered successfully !!!", token: newTeam.token });
+      return res.status(200).json({
+        message: "Registered successfully !!!",
+        token: newTeam.token,
+        num: randNum,
+      });
   } else {
     res.status(401).json({ message: error.message });
   }

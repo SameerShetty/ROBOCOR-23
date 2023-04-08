@@ -7,6 +7,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import Register from "./pages/Register";
 import Results from "./pages/Results";
 import FourOFour from "./pages/FourOFour";
+import Certificate from "./pages/Certificate";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/event/:id" exact element={<EventD />} />
           <Route path="/register" exact element={<Register />} />
           <Route path="/results" exact element={<Results />} />
+          <Route path="/certificate" exact element={<Certificate />} />
           <Route path="*" element={<FourOFour />} />
         </Routes>
       </Router>
