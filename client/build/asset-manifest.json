@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c338f991.css",
-    "main.js": "/static/js/main.f24d0a2e.js",
+    "main.js": "/static/js/main.e2a0acf8.js",
     "static/js/498.08e1e2c8.chunk.js": "/static/js/498.08e1e2c8.chunk.js",
     "static/js/703.041860bd.chunk.js": "/static/js/703.041860bd.chunk.js",
     "static/js/598.d1bd5f6d.chunk.js": "/static/js/598.d1bd5f6d.chunk.js",
@@ -10,7 +10,7 @@
     "static/media/Valorant Font.ttf": "/static/media/Valorant Font.86ec8370af32018a2391.ttf",
     "index.html": "/index.html",
     "main.c338f991.css.map": "/static/css/main.c338f991.css.map",
-    "main.f24d0a2e.js.map": "/static/js/main.f24d0a2e.js.map",
+    "main.e2a0acf8.js.map": "/static/js/main.e2a0acf8.js.map",
     "498.08e1e2c8.chunk.js.map": "/static/js/498.08e1e2c8.chunk.js.map",
     "703.041860bd.chunk.js.map": "/static/js/703.041860bd.chunk.js.map",
     "598.d1bd5f6d.chunk.js.map": "/static/js/598.d1bd5f6d.chunk.js.map",
@@ -18,6 +18,6 @@
   },
   "entrypoints": [
     "static/css/main.c338f991.css",
-    "static/js/main.f24d0a2e.js"
+    "static/js/main.e2a0acf8.js"
   ]
 }
