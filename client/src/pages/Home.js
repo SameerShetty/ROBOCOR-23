@@ -8,6 +8,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import ScrollSpinner from "../components/ScrollSpinner";
+import Ticket from "../components/Ticket";
 
 function Home() {
   const targetDate = new Date("2023-05-17T00:00:00");
@@ -104,6 +105,7 @@ function Home() {
             </div>
           ))}
         </div>
+        <Ticket />
       </div>
       <Footer />
     </>
