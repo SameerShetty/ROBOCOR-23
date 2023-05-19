@@ -2,7 +2,7 @@ const EventDetails = [
   {
     id: 1,
     img: "../imgs/dcode.jpg",
-    title: "Decode",
+    title: "GG",
     desc: "Coding is an integral part of Robotics. Our coding event is designed to be both challenging and fun During this event, you will have the chance to compete with other talented programmers and solve challenging coding problems. The winners will be determined based on accuracy, efficiency, and speed. ",
     ev: "Lab",
     et: "10.30 am",
