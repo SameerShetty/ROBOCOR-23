@@ -10,7 +10,7 @@ import NavBar from "../components/NavBar";
 import ScrollSpinner from "../components/ScrollSpinner";
 
 function Home() {
-  const targetDate = new Date("2023-05-17T00:00:00");
+  const targetDate = new Date("2023-06-17T00:00:00");
   return (
     <>
       <NavBar />
