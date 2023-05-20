@@ -17,8 +17,8 @@ function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/event/:id" exact element={<EventD />} />
           <Route path="/register" exact element={<Register />} />
-          <Route path="/results" exact element={<Results />} />
-          <Route path="/certificate" exact element={<Certificate />} />
+          {/* <Route path="/results" exact element={<Results />} />
+          <Route path="/certificate" exact element={<Certificate />} /> */}
           <Route path="*" element={<FourOFour />} />
         </Routes>
       </Router>
