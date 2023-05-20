@@ -4,16 +4,15 @@ const crypto = require("crypto");
 const Razorpay = require("razorpay");
 
 const EventDetails = [
-  "event1",
-  "event2",
-  "event3",
-  "event4",
-  "event5",
-  "event6",
-  "event7",
-  "event8",
-  "event9",
-  "event10",
+  "lfr",
+  "bbot",
+  "rbsoc",
+  "rgrace",
+  "ardcls",
+  "dcode",
+  "pp",
+  "ps",
+  "fun",
 ];
 const subscribe = async (req, res) => {
   const { email } = req.body;
@@ -43,9 +42,9 @@ const getEventDetails = (eventList) => {
 };
 
 const register = async (req, res) => {
-  const { responseData, team } = req.body;
-  const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
-    responseData;
+  // const { responseData, team } = req.body;
+  // const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
+  //   responseData;
   const {
     name,
     email,
@@ -60,20 +59,22 @@ const register = async (req, res) => {
     m3,
     m3email,
     eventList,
-  } = team;
+    TsacId,
+  } = req.body;
 
-  const body = razorpay_order_id + "|" + razorpay_payment_id;
+  // const body = razorpay_order_id + "|" + razorpay_payment_id;
 
-  const expectedSignature = crypto
-    .createHmac("sha256", process.env.RAZORPAY_APT_SECRET)
-    .update(body.toString())
-    .digest("hex");
+  // const expectedSignature = crypto
+  //   .createHmac("sha256", process.env.RAZORPAY_APT_SECRET)
+  //   .update(body.toString())
+  //   .digest("hex");
 
-  const isAuthentic = expectedSignature === razorpay_signature;
+  // const isAuthentic = expectedSignature === razorpay_signature;
 
-  if (isAuthentic) {
-    const teamCount = await RobocorTeam.countDocuments({});
-    const tNumber = "T" + Number(teamCount + 1);
+  // if (isAuthentic) {
+  const teamCount = await RobocorTeam.countDocuments({});
+  const tNumber = "T" + Number(teamCount + 1);
+  try {
     const team = new RobocorTeam({
       token: tNumber,
       TLead: name,
@@ -89,46 +90,46 @@ const register = async (req, res) => {
       m3: m3,
       m3Email: m3email,
       eventList: getEventDetails(eventList),
-      razorpay_order_id,
-      razorpay_payment_id,
-      razorpay_signature,
+      TsacId,
     });
     const newTeam = await team.save();
-    const randNum = Math.floor(Math.random() * 5) + 1;
     if (newTeam)
       return res.status(200).json({
         message: "Registered successfully !!!",
         token: newTeam.token,
-        num: randNum,
       });
-  } else {
+  } catch (error) {
     res.status(401).json({ message: error.message });
   }
+
+  // } else {
+  //
+  // }
 };
 
-const checkout = async (req, res) => {
-  const { amount } = req.body;
-  const instance = new Razorpay({
-    key_id: process.env.RAZORPAY_API_KEY,
-    key_secret: process.env.RAZORPAY_APT_SECRET,
-  });
+// const checkout = async (req, res) => {
+//   const { amount } = req.body;
+//   const instance = new Razorpay({
+//     key_id: process.env.RAZORPAY_API_KEY,
+//     key_secret: process.env.RAZORPAY_APT_SECRET,
+//   });
 
-  const options = {
-    amount: Number(amount * 100),
-    currency: "INR",
-  };
-  const order = await instance.orders.create(options);
-  res.status(200).json({
-    success: true,
-    order,
-  });
-};
-const getKey = (req, res) => {
-  return res.status(200).json({ key: process.env.RAZORPAY_API_KEY });
-};
+//   const options = {
+//     amount: Number(amount * 100),
+//     currency: "INR",
+//   };
+//   const order = await instance.orders.create(options);
+//   res.status(200).json({
+//     success: true,
+//     order,
+//   });
+// };
+// const getKey = (req, res) => {
+//   return res.status(200).json({ key: process.env.RAZORPAY_API_KEY });
+// };
 module.exports = {
   register,
   subscribe,
-  checkout,
-  getKey,
+  // checkout,
+  // getKey,
 };

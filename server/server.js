@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.use("/api/register", require("./routes/RegisterRoute"));
-app.use("/api/results", require("./routes/ResultsRoute"));
+// app.use("/api/results", require("./routes/ResultsRoute"));
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 

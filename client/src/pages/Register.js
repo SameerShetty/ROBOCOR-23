@@ -9,6 +9,7 @@ function Register() {
   const [formStep, setFormStep] = useState(1);
   // const [msg, setMsg] = useState({});
   const [total, setTotal] = useState(0);
+  const [isSuccess, setSuccess] = useState(false);
   const [events, setEvents] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
@@ -24,6 +25,7 @@ function Register() {
     m3: "",
     m3email: "",
     eventList: [],
+    TsacId: "",
   });
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -38,49 +40,57 @@ function Register() {
     });
   };
   const checkoutHandler = async (newTeam) => {
-    const {
-      data: { key },
-    } = await axios.get("/api/register/key");
+    // const {
+    //   data: { key },
+    // } = await axios.get("/api/register/key");
 
-    const {
-      data: { order },
-    } = await axios.post("/api/register/checkout", newTeam);
+    // const {
+    //   data: { order },
+    // } = await axios.post("/api/register/checkout", newTeam);
 
-    const options = {
-      key,
-      amount: order.amount,
-      currency: "INR",
-      name: "CORSIT-ROBOCOR-23",
-      description: "CORSIT-ROBOCOR-23",
-      image: "../imgs/dinopng.png",
-      order_id: order.id,
-      handler: async (response) => {
-        const newOb = {
-          responseData: response,
-          team: newTeam,
-        };
-        try {
-          const verifyUrl = "/api/register";
-          const { data } = await axios.post(verifyUrl, newOb);
-          toast.success(data.message + data.token);
-        } catch (error) {
-          console.log(error);
-        }
-      },
-      prefill: {
-        name: "CORSIT",
-        email: "corsit@sit.ac.in",
-        contact: "6201928647",
-      },
-      notes: {
-        address: "CORSIT LAB,SIT,TUMKUR",
-      },
-      theme: {
-        color: "#fa4454",
-      },
-    };
-    const razor = new window.Razorpay(options);
-    razor.open();
+    // const options = {
+    //   key,
+    //   amount: order.amount,
+    //   currency: "INR",
+    //   name: "CORSIT-ROBOCOR-23",
+    //   description: "CORSIT-ROBOCOR-23",
+    //   image: "../imgs/dinopng.png",
+    //   order_id: order.id,
+    //   handler: async (response) => {
+    //     const newOb = {
+    //       responseData: response,
+    //       team: newTeam,
+    //     };
+    //     try {
+    //       const verifyUrl = "/api/register";
+    //       const { data } = await axios.post(verifyUrl, newOb);
+    //       toast.success(data.message + data.token);
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    //   },
+    //   prefill: {
+    //     name: "CORSIT",
+    //     email: "corsit@sit.ac.in",
+    //     contact: "6201928647",
+    //   },
+    //   notes: {
+    //     address: "CORSIT LAB,SIT,TUMKUR",
+    //   },
+    //   theme: {
+    //     color: "#fa4454",
+    //   },
+    // };
+    // const razor = new window.Razorpay(options);
+    // razor.open();
+
+    await axios
+      .post("/api/register", newTeam)
+      .then((res) => {
+        toast.success(res.data.message + res.data.token);
+        setSuccess(true);
+      })
+      .catch((err) => console.log(err));
   };
 
   const handleSubmit = (e) => {
@@ -89,7 +99,7 @@ function Register() {
     else {
       setProgressWidth((prev) => Number(prev) + 33.33);
       setFormStep((prev) => Number(prev) + 1);
-      if (Number(formStep) === 2) {
+      if (Number(formStep) === 3) {
         const newTeam = {
           name: formData.name,
           email: formData.email,
@@ -105,6 +115,7 @@ function Register() {
           m3email: formData.m3email,
           eventList: events,
           amount: total,
+          TsacId: formData.TsacId,
         };
         checkoutHandler(newTeam);
       }
@@ -180,7 +191,7 @@ function Register() {
                       className="row align-items-center justify-content-around flex-wrap"
                       style={{ width: "100%" }}
                     >
-                      <div className="col-md-5 col-12 mx-1 my-3  form-check  d-flex align-items-center justify-content-around  ">
+                      <div className="col-md-5 col-12 mx-1 my-3  form-check  d-flex align-items-center justify-content-start ">
                         <div>
                           <input
                             className="form-check-input"
@@ -191,11 +202,11 @@ function Register() {
                             id="1"
                           />
                           <label className="form-check-label" htmlFor="1">
-                            Trail Blazer : 100 ₹
+                            Trail Blazer : 400 ₹
                           </label>
                         </div>
                       </div>
-                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-around ">
+                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-start ">
                         <div>
                           <input
                             className="form-check-input"
@@ -210,7 +221,7 @@ function Register() {
                           </label>
                         </div>
                       </div>{" "}
-                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-around ">
+                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-start ">
                         <div>
                           <input
                             className="form-check-input"
@@ -225,7 +236,7 @@ function Register() {
                           </label>{" "}
                         </div>
                       </div>{" "}
-                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-around ">
+                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-start ">
                         <div>
                           {" "}
                           <input
@@ -241,7 +252,7 @@ function Register() {
                           </label>
                         </div>
                       </div>{" "}
-                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-around ">
+                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-start ">
                         <div>
                           <input
                             className="form-check-input"
@@ -256,7 +267,7 @@ function Register() {
                           </label>
                         </div>
                       </div>{" "}
-                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-around ">
+                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-start ">
                         <div>
                           {" "}
                           <input
@@ -272,7 +283,7 @@ function Register() {
                           </label>
                         </div>
                       </div>{" "}
-                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-around ">
+                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-start ">
                         <div>
                           {" "}
                           <input
@@ -284,11 +295,11 @@ function Register() {
                             id="7"
                           />
                           <label className="form-check-label" htmlFor="7">
-                            Paper Presentation : 200 ₹
+                            Presentario: 200 ₹
                           </label>
                         </div>
                       </div>
-                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-around ">
+                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-start ">
                         <div>
                           <input
                             className="form-check-input"
@@ -296,14 +307,14 @@ function Register() {
                             name="projectsymposium"
                             value={400}
                             onChange={handleCheck}
-                            id="7"
+                            id="8"
                           />
                           <label className="form-check-label" htmlFor="8">
                             Project Symposium : 400 ₹
                           </label>
                         </div>
                       </div>{" "}
-                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-around ">
+                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-start ">
                         <div>
                           <input
                             className="form-check-input"
@@ -314,11 +325,11 @@ function Register() {
                             id="9"
                           />
                           <label className="form-check-label" htmlFor="9">
-                            Spardha : 100 ₹
+                            Campus Bash : 100 ₹
                           </label>
                         </div>
                       </div>{" "}
-                      <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-around ">
+                      {/* <div className="col-md-5 col-12 mx-1 my-3 form-check d-flex align-items-center justify-content-start ">
                         <div>
                           {" "}
                           <input
@@ -333,7 +344,7 @@ function Register() {
                             Group Photo : 100 ₹
                           </label>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                     {/* <button type="button" className="btn btn-light my-3">
                     Total : {total} ₹
@@ -431,17 +442,27 @@ function Register() {
                         {" "}
                         BRANCH
                       </option>
-                      <option value="CSE">Computer Science & Engineering</option>
-                      <option value="ECE">Electronics & Communication Engineering</option>
-                      <option value="ISE">Information Science & Engineering</option>
-                      <option value="EEE">Electrical & Electronics Engineering</option>
+                      <option value="CSE">
+                        Computer Science & Engineering
+                      </option>
+                      <option value="ECE">
+                        Electronics & Communication Engineering
+                      </option>
+                      <option value="ISE">
+                        Information Science & Engineering
+                      </option>
+                      <option value="EEE">
+                        Electrical & Electronics Engineering
+                      </option>
                       <option value="AIDS">
                         Artificial Inteligence & Data Science
                       </option>
                       <option value="ETE">
                         Electronics & Telecommunicaton Engineering
                       </option>
-                      <option value="EIE">Electronics & Instrumentation Engineering</option>
+                      <option value="EIE">
+                        Electronics & Instrumentation Engineering
+                      </option>
                       <option value="IEM">
                         Industrial Engineering Management
                       </option>
@@ -510,13 +531,18 @@ function Register() {
                       </h4>
 
                       <li>
-                        If u opt for D-Cypher or Spardha ,the team size constraint is max. 2
+                        If you opt for <strong>D-Cypher</strong> or{" "}
+                        <strong>Spardha</strong> ,the team size constraint is{" "}
+                        <strong>max. 2</strong>
                       </li>
                       <li>
-                        If u opt for Arduino Trap ,the team size constraint is max. 3
+                        If you opt for <strong>Arduino Trap</strong> ,the team
+                        size constraint is
+                        <strong> max. 3</strong>
                       </li>
                       <li>
-                        For all other events ,the team size constraint is max. 4
+                        For all other events ,the team size constraint is{" "}
+                        <strong>max. 4</strong>
                       </li>
                     </ul>
                   </div>
@@ -550,7 +576,7 @@ function Register() {
                         EMAIL
                       </label>
                     </div>
-                    {!events.includes("1") && (
+                    {!events.includes("5") && (
                       <>
                         <div className="form-floating">
                           <input
@@ -581,7 +607,7 @@ function Register() {
                             EMAIL
                           </label>
                         </div>{" "}
-                        {!events.includes("2") && (
+                        {!events.includes("6") && (
                           <>
                             <div className="form-floating">
                               <input
@@ -652,6 +678,53 @@ function Register() {
                         </button>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </form>
+            )}
+            {formStep >= 3 && (
+              <form
+                onSubmit={handleSubmit}
+                style={{
+                  width: "100%",
+                  padding: "1.5rem 2rem",
+                  borderRadius: "12px",
+                  marginBottom: "1.5rem",
+                  boxShadow:
+                    "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
+                }}
+              >
+                <div className="row align-items-center justify-content-center">
+                  <div className="col-12 col-md-6 d-flex flex-wrap align-items-center justify-content-around">
+                    {!isSuccess && (
+                      <img src="../imgs/qr.jpg" alt="qr" className="img" />
+                    )}
+                    {!isSuccess && (
+                      <div>
+                        {" "}
+                        <div className="form-floating w-100">
+                          <input
+                            type="text"
+                            className="form-control mb-3"
+                            placeholder="Enter TID"
+                            name="TsacId"
+                            id="TsacId"
+                            required
+                            value={formData.TsacId}
+                            onChange={handleOnChange}
+                          />
+                          <label htmlFor="TsacId" className="form-label">
+                            Enter the Transaction ID
+                          </label>
+                        </div>
+                        <button className="btn" type="submit">
+                          <span className="btn__inner">
+                            <span className="btn__slide"></span>
+                            <span className="btn__content"> submit</span>
+                          </span>
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </form>

@@ -56,8 +56,8 @@ const EventDetails = [
   {
     id: 7,
     img: "../imgs/paperpresentation.jpg",
-    title: "Paper Presentation",
-    desc: " It’s time to show who’s the boss when it comes to the command over the subject. If you have an idea which has been taking shelter in your mind that  would change lifestyles visibly,make inroads into the development of geeky  technology or even make some known technology effective and efficient then  we offer you the stage to showwho you are to the world. ",
+    title: "Presentario",
+    desc: " It's time to show who's the boss when it comes to the command over the subject. If you have an idea which has been taking shelter in your mind that  would change lifestyles visibly,make inroads into the development of geeky  technology or even make some known technology effective and efficient then  we offer you the stage to showwho you are to the world. ",
     ev: "Faraday Seminar Hall",
     et: "10.30 am",
     ts: "4",
@@ -74,20 +74,11 @@ const EventDetails = [
   {
     id: 9,
     img: "../imgs/spardha.jpg",
-    title: "Spardha",
+    title: "Campus Bash",
     desc: "It's a fun event. You can activate the child inside you. Feel energetic and refreshed after participating. Go through the series of challenges under one roof , its just like a magician’s hat , which is full of fun and crazy enthusiastic sub events each one unique in its own league take out your inner child and unleash your hunger for fun in this event . Now there is nothing to hold back go and participate NOW.",
     ev: "Birla Auditorium",
     et: "10.30 am",
     ts: "2",
-  },
-  {
-    id: 10,
-    img: "../imgs/group.jpg",
-    title: "Group photo",
-    desc: "It's a photo clicked in the end of the event. It depicts the successful conduction of event. It'll have all members form Corsit who had taken part in Robocor. It shows the team work of the members and the efforts put in to make the event successful. Here we'll get to see the hardwork and the smartwork done by club members from the past few months in the form of a grand event.",
-    ev: "Media Center",
-    et: "6.00 pm",
-    ts: "53",
   },
 ];
 export default EventDetails;

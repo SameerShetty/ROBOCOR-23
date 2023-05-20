@@ -38,7 +38,8 @@ function Footer() {
           <h6>CORSIT</h6>{" "}
           <p style={{ color: "#c9d6df" }}>
             Corsit is the Robotics Club of Siddaganga Institute of Technology.
-            Established in 2006,works under the patronage of eYantra cell of IIT Bombay.
+            Established in 2006,works under the patronage of eYantra cell of IIT
+            Bombay.
           </p>
           <div
             className="d-flex align-items-center justify-content-between"
@@ -86,13 +87,12 @@ function Footer() {
             <li>
               <Link to={"/register"}>Register</Link>
             </li>
+
             <li>
               {" "}
-              <Link to={"/results"}>Results</Link>
-            </li>
-            <li>
-              {" "}
-              <Link to={"/rulebook"}>Rule Book</Link>
+              <a href="../assets/RuleBook.pdf" download={"RuleBook"}>
+                Rule Book
+              </a>
             </li>
           </ul>
         </div>
@@ -120,7 +120,11 @@ function Footer() {
           </p>
 
           <p style={{ color: "#c9d6df" }}>
-            <a href="mailto:corsit@sit.ac.in" target={"_blank"} rel="noreferrer">
+            <a
+              href="mailto:corsit@sit.ac.in"
+              target={"_blank"}
+              rel="noreferrer"
+            >
               <SiGmail
                 style={{
                   color: "#fa4454",
@@ -130,7 +134,11 @@ function Footer() {
               />{" "}
             </a>
             {"  "}{" "}
-            <a href="mailto:corsit@sit.ac.in" target={"_blank"} rel="noreferrer">
+            <a
+              href="mailto:corsit@sit.ac.in"
+              target={"_blank"}
+              rel="noreferrer"
+            >
               Contact us on Gmail{" "}
             </a>
           </p>

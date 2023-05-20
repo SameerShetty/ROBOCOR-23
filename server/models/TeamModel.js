@@ -6,6 +6,11 @@ const teamSchema = mongoose.Schema({
     unique: true,
     required: true,
   },
+  TsacId: {
+    type: String,
+    unique: true,
+    required: true,
+  },
   TLead: {
     type: String,
     require: [1, "Team leader required !!!"],
@@ -52,18 +57,18 @@ const teamSchema = mongoose.Schema({
     type: [String],
     default: [],
   },
-  razorpay_order_id: {
-    type: String,
-    required: true,
-  },
-  razorpay_payment_id: {
-    type: String,
-    required: true,
-  },
-  razorpay_signature: {
-    type: String,
-    required: true,
-  },
+  // razorpay_order_id: {
+  //   type: String,
+  //   required: true,
+  // },
+  // razorpay_payment_id: {
+  //   type: String,
+  //   required: true,
+  // },
+  // razorpay_signature: {
+  //   type: String,
+  //   required: true,
+  // },
 });
 
 module.exports = mongoose.model("RobocorTeam", teamSchema);

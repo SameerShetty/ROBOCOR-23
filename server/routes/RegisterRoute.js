@@ -8,8 +8,8 @@ const {
 } = require("../controllers/RegisterController");
 
 router.post("/", register);
-router.post("/checkout", checkout);
+// router.post("/checkout", checkout);
 router.post("/subscribe", subscribe);
-router.get("/key", getKey);
+// router.get("/key", getKey);
 
 module.exports = router;

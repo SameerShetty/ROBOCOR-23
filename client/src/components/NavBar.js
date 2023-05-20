@@ -121,7 +121,7 @@ function NavBar() {
                   </h6>
                 </Link>
               </li>
-              <li className="my-5">
+              {/* <li className="my-5">
                 <Link to={"/results"} style={{ color: "#1e2022" }}>
                   <h6 style={{ color: "#0f1924" }}>
                     <GiTrophyCup
@@ -134,9 +134,13 @@ function NavBar() {
                     Results
                   </h6>
                 </Link>
-              </li>
+              </li> */}
               <li className="my-5">
-                <Link to={"/register"} style={{ color: "#1e2022" }}>
+                <a
+                  style={{ color: "#1e2022" }}
+                  href="../assets/RuleBook.pdf"
+                  download={"RuleBook"}
+                >
                   <h6 style={{ color: "#0f1924" }}>
                     <HiDownload
                       style={{
@@ -147,9 +151,9 @@ function NavBar() {
                     />
                     Rule Book
                   </h6>
-                </Link>
+                </a>
               </li>
-              <li className="my-5">
+              {/* <li className="my-5">
                 <Link to={"/certificate"} style={{ color: "#1e2022" }}>
                   <h6 style={{ color: "#0f1924" }}>
                     <HiDownload
@@ -162,7 +166,7 @@ function NavBar() {
                     Certificate
                   </h6>
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

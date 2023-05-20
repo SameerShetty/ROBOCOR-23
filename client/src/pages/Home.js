@@ -52,6 +52,9 @@ function Home() {
             className="img gun"
           /> */}
           {/* <ScrollSpinner /> */}
+          <h1 className="text-center my-6" style={{ margin: "6rem 0" }}>
+            Events
+          </h1>
 
           {EventDetails.map((item) => (
             <Card

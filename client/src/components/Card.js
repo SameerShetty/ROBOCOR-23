@@ -44,16 +44,22 @@ function Card(props) {
                 <strong>Timing : </strong>
                 {props.et}
               </div>
+              <div className="my-1">
+                {" "}
+                <strong>Teamsize : </strong>
+                {props.ts}
+              </div>
             </div>
-            <Link to={`/event/${props.eventId}`}>
-              {/* <button className="btn btn-dark">Know more</button> */}
+
+            {/* <Link to={`/event/${props.eventId}`}>
+             
               <button className="btn ">
                 <span className="btn__inner">
                   <span className="btn__slide"></span>
                   <span className="btn__content">Know more</span>
                 </span>
               </button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </Fade>
