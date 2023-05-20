@@ -37,8 +37,8 @@ function Footer() {
         <div className="col-md-3 col-12 d-flex justify-content-center flex-column p-3">
           <h6>CORSIT</h6>{" "}
           <p style={{ color: "#c9d6df" }}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industrs standard dummy
+            Corsit is the Robotics Club of Siddaganga Institute of Technology.
+            Established in 2006,works under the patronage of eYantra cell of IIT Bombay.
           </p>
           <div
             className="d-flex align-items-center justify-content-between"
@@ -104,7 +104,7 @@ function Footer() {
           </p>
 
           <p style={{ color: "#c9d6df" }}>
-            <a href="https://api.whatsapp.com/send?phone=919986094165">
+            <a href="https://api.whatsapp.com/send?phone=916201928647">
               <FaWhatsapp
                 style={{
                   color: "#fa4454",
@@ -114,13 +114,13 @@ function Footer() {
               />
             </a>
             {"  "}{" "}
-            <a href="https://api.whatsapp.com/send?phone=919986094165">
+            <a href="https://api.whatsapp.com/send?phone=916201928647">
               Contact us on WhatsApp
             </a>
           </p>
 
           <p style={{ color: "#c9d6df" }}>
-            <a href="mailto:cosit@sit.ac.in" target={"_blank"} rel="noreferrer">
+            <a href="mailto:corsit@sit.ac.in" target={"_blank"} rel="noreferrer">
               <SiGmail
                 style={{
                   color: "#fa4454",
@@ -130,7 +130,7 @@ function Footer() {
               />{" "}
             </a>
             {"  "}{" "}
-            <a href="mailto:cosit@sit.ac.in" target={"_blank"} rel="noreferrer">
+            <a href="mailto:corsit@sit.ac.in" target={"_blank"} rel="noreferrer">
               Contact us on Gmail{" "}
             </a>
           </p>

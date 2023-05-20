@@ -70,7 +70,7 @@ function Register() {
       prefill: {
         name: "CORSIT",
         email: "corsit@sit.ac.in",
-        contact: "9986094165",
+        contact: "6201928647",
       },
       notes: {
         address: "CORSIT LAB,SIT,TUMKUR",
@@ -185,13 +185,13 @@ function Register() {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="event1"
+                            name="trailblazer"
                             value={100}
                             onChange={handleCheck}
                             id="1"
                           />
                           <label className="form-check-label" htmlFor="1">
-                            EVENT 1 : 100 ₹
+                            Trail Blazer : 100 ₹
                           </label>
                         </div>
                       </div>
@@ -200,13 +200,13 @@ function Register() {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="event2"
+                            name="boombots"
                             value={400}
                             onChange={handleCheck}
                             id="2"
                           />
                           <label className="form-check-label" htmlFor="2">
-                            EVENT 2 : 400 ₹
+                            Boom Bots : 400 ₹
                           </label>
                         </div>
                       </div>{" "}
@@ -215,13 +215,13 @@ function Register() {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="event3"
-                            value={300}
+                            name="soccerstum"
+                            value={400}
                             onChange={handleCheck}
                             id="3"
                           />
                           <label className="form-check-label" htmlFor="3">
-                            EVENT 3 : 300 ₹
+                            Soccer Stum : 400 ₹
                           </label>{" "}
                         </div>
                       </div>{" "}
@@ -231,13 +231,13 @@ function Register() {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="event4"
+                            name="tailwind"
                             value={400}
                             onChange={handleCheck}
                             id="4"
                           />
                           <label className="form-check-label" htmlFor="4">
-                            EVENT 4 : 400 ₹
+                            Tailwind : 400 ₹
                           </label>
                         </div>
                       </div>{" "}
@@ -246,13 +246,13 @@ function Register() {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="event5"
-                            value={100}
+                            name="arduinotrap"
+                            value={150}
                             onChange={handleCheck}
                             id="5"
                           />
                           <label className="form-check-label" htmlFor="5">
-                            EVENT 5 : 100 ₹
+                            Arduino Trap : 150 ₹
                           </label>
                         </div>
                       </div>{" "}
@@ -262,13 +262,13 @@ function Register() {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="event6"
-                            value={150}
+                            name="dcypher"
+                            value={100}
                             onChange={handleCheck}
                             id="6"
                           />
                           <label className="form-check-label" htmlFor="6">
-                            EVENT 6 : 150 ₹
+                            D-Cypher : 100 ₹
                           </label>
                         </div>
                       </div>{" "}
@@ -278,13 +278,13 @@ function Register() {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="event7"
+                            name="paperpresentation"
                             value={200}
                             onChange={handleCheck}
                             id="7"
                           />
                           <label className="form-check-label" htmlFor="7">
-                            EVENT 7 : 200 ₹
+                            Paper Presentation : 200 ₹
                           </label>
                         </div>
                       </div>
@@ -293,13 +293,13 @@ function Register() {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="event7"
-                            value={200}
+                            name="projectsymposium"
+                            value={400}
                             onChange={handleCheck}
                             id="7"
                           />
-                          <label className="form-check-label" htmlFor="7">
-                            EVENT 8 : 200 ₹
+                          <label className="form-check-label" htmlFor="8">
+                            Project Symposium : 400 ₹
                           </label>
                         </div>
                       </div>{" "}
@@ -308,13 +308,13 @@ function Register() {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="event9"
+                            name="spardha"
                             value={100}
                             onChange={handleCheck}
                             id="9"
                           />
                           <label className="form-check-label" htmlFor="9">
-                            EVENT 9 : 100 ₹
+                            Spardha : 100 ₹
                           </label>
                         </div>
                       </div>{" "}
@@ -324,13 +324,13 @@ function Register() {
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            name="event10"
+                            name="groupphoto"
                             value={100}
                             onChange={handleCheck}
                             id="10"
                           />
                           <label className="form-check-label" htmlFor="10">
-                            EVENT 10 : 100 ₹
+                            Group Photo : 100 ₹
                           </label>
                         </div>
                       </div>
@@ -431,24 +431,24 @@ function Register() {
                         {" "}
                         BRANCH
                       </option>
-                      <option value="CSE">Computer Science</option>
-                      <option value="ECE">Electronics & Communication</option>
-                      <option value="ISE">Information Science</option>
-                      <option value="EEE">Electrical & Electronics</option>
+                      <option value="CSE">Computer Science & Engineering</option>
+                      <option value="ECE">Electronics & Communication Engineering</option>
+                      <option value="ISE">Information Science & Engineering</option>
+                      <option value="EEE">Electrical & Electronics Engineering</option>
                       <option value="AIDS">
                         Artificial Inteligence & Data Science
                       </option>
                       <option value="ETE">
-                        Electronics & Telecommunicaton
+                        Electronics & Telecommunicaton Engineering
                       </option>
-                      <option value="EIE">Electronics & Instrumentation</option>
+                      <option value="EIE">Electronics & Instrumentation Engineering</option>
                       <option value="IEM">
                         Industrial Engineering Management
                       </option>
-                      <option value="Mec">Mechanical </option>
-                      <option value="CIV">Civil </option>
-                      <option value="BIO">Biotechnology</option>
-                      <option value="CHE">Chemical</option>
+                      <option value="Mec">Mechanical Engineering</option>
+                      <option value="CIV">Civil Engineering</option>
+                      <option value="BIO">Biotechnology Engineering</option>
+                      <option value="CHE">Chemical Engineering</option>
                       <option value="AIML">
                         Artificial Intelligence & Machine Learning
                       </option>
@@ -510,10 +510,10 @@ function Register() {
                       </h4>
 
                       <li>
-                        If u opt for event 1 ,the team size constraint is max. 2
+                        If u opt for D-Cypher or Spardha ,the team size constraint is max. 2
                       </li>
                       <li>
-                        If u opt for event 2 ,the team size constraint is max. 3
+                        If u opt for Arduino Trap ,the team size constraint is max. 3
                       </li>
                       <li>
                         For all other events ,the team size constraint is max. 4
