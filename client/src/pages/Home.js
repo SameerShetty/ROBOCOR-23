@@ -35,6 +35,12 @@ function Home() {
             className="text-center"
             style={{ textShadow: "3px 3px 20px #fa4454,-2px 1px 30px #fa4454" }}
           >
+            17<sup>th</sup> JUNE'23
+          </h6>
+          <h6
+            className="text-center"
+            style={{ textShadow: "3px 3px 20px #fa4454,-2px 1px 30px #fa4454" }}
+          >
             Innovate . Compete . Conquer
           </h6>
 
