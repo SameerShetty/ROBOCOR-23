@@ -29,7 +29,7 @@ function Home() {
             }}
           >
             {" "}
-            ROBOCOR
+            ROBOCOR'23
           </h1>
           <h6
             className="text-center"
