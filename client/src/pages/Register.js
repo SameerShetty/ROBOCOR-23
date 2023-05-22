@@ -3,13 +3,18 @@ import { toast } from "react-toastify";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import axios from "axios";
+import Loader from "../components/Loader";
 
 function Register() {
   const [progressWidth, setProgressWidth] = useState(0);
   const [formStep, setFormStep] = useState(1);
+  const [isloading, setLoading] = useState(false);
   // const [msg, setMsg] = useState({});
   const [total, setTotal] = useState(0);
   const [isSuccess, setSuccess] = useState(false);
+  const [isTeamNo, setTeamNo] = useState({
+    teamNo: "",
+  });
   const [events, setEvents] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
@@ -40,6 +45,7 @@ function Register() {
     });
   };
   const checkoutHandler = async (newTeam) => {
+    setLoading(true);
     // const {
     //   data: { key },
     // } = await axios.get("/api/register/key");
@@ -89,8 +95,18 @@ function Register() {
       .then((res) => {
         toast.success(res.data.message + res.data.token);
         setSuccess(true);
+        setLoading(false);
+        setTeamNo({
+          teamNo: res.data.token,
+        });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+        setTeamNo({
+          teamNo: "",
+        });
+      });
   };
 
   const handleSubmit = (e) => {
@@ -197,7 +213,7 @@ function Register() {
                             className="form-check-input"
                             type="checkbox"
                             name="trailblazer"
-                            value={100}
+                            value={400}
                             onChange={handleCheck}
                             id="1"
                           />
@@ -532,8 +548,8 @@ function Register() {
 
                       <li>
                         If you opt for <strong>D-Cypher</strong> or{" "}
-                        <strong>Spardha</strong> ,the team size constraint is{" "}
-                        <strong>max. 2</strong>
+                        <strong>Campus Bash</strong> ,the team size constraint
+                        is <strong>max. 2</strong>
                       </li>
                       <li>
                         If you opt for <strong>Arduino Trap</strong> ,the team
@@ -576,7 +592,7 @@ function Register() {
                         EMAIL
                       </label>
                     </div>
-                    {!events.includes("5") && (
+                    {!events.includes("6") && (
                       <>
                         <div className="form-floating">
                           <input
@@ -607,7 +623,7 @@ function Register() {
                             EMAIL
                           </label>
                         </div>{" "}
-                        {!events.includes("6") && (
+                        {!events.includes("5") && (
                           <>
                             <div className="form-floating">
                               <input
@@ -696,20 +712,32 @@ function Register() {
               >
                 <div className="row align-items-center justify-content-center">
                   <div className="col-12 col-md-6 d-flex flex-wrap align-items-center justify-content-around">
+                    {isSuccess && (
+                      <div className="col-12 col-md-6 d-flex flex-wrap align-items-center justify-content-around">
+                        <h1 style={{ color: "#fa4454" }}>
+                          Thanks for Registering !!!{" "}
+                        </h1>
+                        <h2 style={{ color: "#0f1924" }}>
+                          Note your Team Number
+                        </h2>
+                        <h1 style={{ color: "#000" }}>{isTeamNo.teamNo}</h1>
+                      </div>
+                    )}
                     {!isSuccess && (
                       <img src="../imgs/qr.jpg" alt="qr" className="img" />
                     )}
                     {!isSuccess && (
-                      <div>
+                      <div className=" w-100">
                         {" "}
                         <div className="form-floating w-100">
                           <input
                             type="text"
-                            className="form-control mb-3"
+                            className="form-control mb-3 "
                             placeholder="Enter TID"
                             name="TsacId"
                             id="TsacId"
                             required
+                            style={{ width: "100%" }}
                             value={formData.TsacId}
                             onChange={handleOnChange}
                           />
@@ -720,7 +748,10 @@ function Register() {
                         <button className="btn" type="submit">
                           <span className="btn__inner">
                             <span className="btn__slide"></span>
-                            <span className="btn__content"> submit</span>
+                            <span className="btn__content">
+                              {" "}
+                              {isloading ? <Loader /> : "submit"}
+                            </span>
                           </span>
                         </button>
                       </div>
