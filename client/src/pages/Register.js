@@ -410,7 +410,8 @@ function Register() {
                         className="form-control mb-3"
                         placeholder="Enter your phone number"
                         name="phone"
-                        pattern="^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$"
+                        maxLength={13}
+                        minLength={10}
                         title="e.g +919XXXXXXXX5,99XXXXXXX5,099XXXXXXX5"
                         required
                         id="phone"
