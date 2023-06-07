@@ -60,7 +60,7 @@ const EventDetails = [
     desc: " It's time to show who's the boss when it comes to the command over the subject. If you have an idea which has been taking shelter in your mind that  would change lifestyles visibly,make inroads into the development of geeky  technology or even make some known technology effective and efficient then  we offer you the stage to showwho you are to the world. ",
     ev: "Faraday Seminar Hall",
     et: "10.30 am",
-    ts: "4",
+    ts: "2",
   },
   {
     id: 8,
