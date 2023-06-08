@@ -549,6 +549,7 @@ function Register() {
 
                       <li>
                         If you opt for <strong>D-Cypher</strong> or{" "}
+                        <strong>Presentario</strong> or{" "}
                         <strong>Campus Bash</strong> ,the team size constraint
                         is <strong>max. 2</strong>
                       </li>
@@ -593,7 +594,7 @@ function Register() {
                         EMAIL
                       </label>
                     </div>
-                    {!events.includes("6") && (
+                    {!events.includes("6") && !events.includes("7") && (
                       <>
                         <div className="form-floating">
                           <input
@@ -725,7 +726,7 @@ function Register() {
                       </div>
                     )}
                     {!isSuccess && (
-                      <img src="../imgs/qr.jpg" alt="qr" className="img" />
+                      <img src="../imgs/qr.png" alt="qr" className="img" />
                     )}
                     {!isSuccess && (
                       <div className=" w-100">
